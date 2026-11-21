@@ -52,15 +52,22 @@ TextTheme _textTheme(Brightness brightness) {
   final base = GoogleFonts.plusJakartaSansTextTheme(
     ThemeData(brightness: brightness).textTheme,
   );
-  TextStyle tabular(TextStyle style) => style.copyWith(
-        fontFeatures: const [FontFeature.tabularFigures()],
-      );
+  TextStyle tabular(TextStyle style) =>
+      style.copyWith(fontFeatures: const [FontFeature.tabularFigures()]);
   return base.copyWith(
-    headlineLarge: tabular(base.headlineLarge!.copyWith(fontWeight: FontWeight.w800)),
-    headlineMedium: tabular(base.headlineMedium!.copyWith(fontWeight: FontWeight.w700)),
-    headlineSmall: tabular(base.headlineSmall!.copyWith(fontWeight: FontWeight.w700)),
+    headlineLarge: tabular(
+      base.headlineLarge!.copyWith(fontWeight: FontWeight.w800),
+    ),
+    headlineMedium: tabular(
+      base.headlineMedium!.copyWith(fontWeight: FontWeight.w700),
+    ),
+    headlineSmall: tabular(
+      base.headlineSmall!.copyWith(fontWeight: FontWeight.w700),
+    ),
     titleLarge: tabular(base.titleLarge!.copyWith(fontWeight: FontWeight.w700)),
-    titleMedium: tabular(base.titleMedium!.copyWith(fontWeight: FontWeight.w600)),
+    titleMedium: tabular(
+      base.titleMedium!.copyWith(fontWeight: FontWeight.w600),
+    ),
     titleSmall: tabular(base.titleSmall!.copyWith(fontWeight: FontWeight.w600)),
     bodyLarge: tabular(base.bodyLarge!),
     bodyMedium: tabular(base.bodyMedium!),
@@ -70,21 +77,15 @@ TextTheme _textTheme(Brightness brightness) {
 }
 
 ThemeData buildLightTheme() {
-  final scheme = const ColorScheme.light(
+  const scheme = ColorScheme.light(
     primary: AppColors.primary,
     onPrimary: Colors.white,
-    primaryContainer: AppColors.primarySoft,
-    onPrimaryContainer: AppColors.primary,
     secondary: AppColors.emerald,
     onSecondary: Colors.white,
-    secondaryContainer: AppColors.emeraldSoft,
-    onSecondaryContainer: Color(0xFF065F46),
     surface: AppColors.surfaceLight,
     onSurface: AppColors.ink,
     error: AppColors.error,
     onError: Colors.white,
-    outline: AppColors.outline,
-    outlineVariant: AppColors.outlineVariant,
   );
 
   return ThemeData(
@@ -180,18 +181,15 @@ ThemeData buildLightTheme() {
 }
 
 ThemeData buildDarkTheme() {
-  final scheme = const ColorScheme.dark(
+  const scheme = ColorScheme.dark(
     primary: AppColors.darkPrimary,
     onPrimary: AppColors.darkBg,
-    primaryContainer: Color(0xFF312E81),
-    onPrimaryContainer: AppColors.darkPrimary,
     secondary: AppColors.emerald,
     onSecondary: Colors.white,
     surface: AppColors.darkSurface,
     onSurface: AppColors.darkInk,
     error: AppColors.error,
     onError: Colors.white,
-    outline: AppColors.darkOutline,
   );
 
   return ThemeData(
